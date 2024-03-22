@@ -10,15 +10,15 @@ class MaxValue {
         {
             throw new ArgumentException("Tablica pusta, błąd");
         }
-        int maxNumber=numbers[0];
+        int MaxValue=numbers[0];
         foreach(int number in numbers)
         {
-            if(number > maxNumber)
+            if(number > MaxValue)
             {
-                maxNumber=number;
+                MaxValue=number;
             }
         }
-        return maxNumber;
+        return MaxValue;
     }
     static void Main (string [] args)
     {
