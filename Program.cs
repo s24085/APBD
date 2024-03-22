@@ -1,9 +1,30 @@
 ﻿namespace APBD;
 
-class Program
+using System;
+
+class Average
 {
+     public static double GetAverage(int[] numbers)
+    {
+        if (numbers == null || numbers.Length == 0)
+        {
+            throw new ArgumentException("Array is empty");
+        }
+
+        double sum = 0;
+        foreach (int number in numbers)
+        {
+            sum += number;
+        }
+        return sum / numbers.Length;
+    }
+
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!\n.NET first app- Modyfikacja 3");
+        int[] numbersArray = { 21, 24, 31, 4, 59 };
+        double average = GetAverage(numbersArray);
+        Console.WriteLine("Avegrage of numbers given is: " + average);
     }
 }
+
+
