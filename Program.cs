@@ -2,29 +2,29 @@
 
 using System;
 
-class Average
-{
-     public static double GetAverage(int[] numbers)
-    {
-        if (numbers == null || numbers.Length == 0)
-        {
-            throw new ArgumentException("Array is empty");
-        }
+class MaxValue {
 
-        double sum = 0;
-        foreach (int number in numbers)
+    public static int MaxMethod(int[] numbers)
+    {
+        if( numbers == null || numbers.Length == 0)
         {
-            sum += number;
+            throw new ArgumentException("Tablica pusta, błąd");
         }
-        return sum / numbers.Length;
+        int maxNumber=numbers[0];
+        foreach(int number in numbers)
+        {
+            if(number > maxNumber)
+            {
+                maxNumber=number;
+            }
+        }
+        return maxNumber;
     }
-
-    static void Main(string[] args)
+    static void Main (string [] args)
     {
-        int[] numbersArray = { 21, 24, 31, 4, 59 };
-        double average = GetAverage(numbersArray);
-        Console.WriteLine("Avegrage of numbers given is: " + average);
+        int[] numbersArray={3,5,6,9,12,10,14,8,2};
+        int max= MaxMethod(numbersArray);
+        Console.WriteLine("Max value if given is " + max);
     }
 }
-
-
+	
